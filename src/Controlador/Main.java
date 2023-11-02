@@ -1,5 +1,7 @@
 package Controlador;
 
+import Vista.VentanaAdd;
+import Vista.VentanaEdit;
 import Vista.VentanaPrincipal;
 
 public class Main {
@@ -12,5 +14,11 @@ public class Main {
 
         //La ventana necesita al controlador porque es quien la va a manejar.
         ventana.establecerManejador(controlador);
+
+        //Creamos instancia de VentanaAdd para que se muestre
+        VentanaAdd ventanaAdd = new VentanaAdd();
+
+        //Creamos instancia de VentanaEdit para que se muestre
+        VentanaEdit ventanaEdit = new VentanaEdit();
     }
 }

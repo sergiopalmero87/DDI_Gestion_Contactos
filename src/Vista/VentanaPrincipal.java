@@ -2,7 +2,6 @@ package Vista;
 
 import Controlador.Controlador;
 
-import javax.naming.ldap.Control;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -79,40 +78,48 @@ public class VentanaPrincipal extends JFrame {
 
     private void inicializarComponentes(){
 
-        //Damos el color desde la clase Color a la ventana
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        //Array de String con las columnas que hay(en este caso 2: Nombre y Telefono).
+        String[] nombreColumnas = {"NOMBRE", "TELEFONO"};
+        //El constructor nos pide el nombre de las columnas y el numero inicial de filas.
+        //Le damos 0 filas porque se crearan cuando se haga click en añadir.
+        tableModel = new DefaultTableModel(nombreColumnas, 0);
+        table = new JTable(tableModel);
+        scrollPane = new JScrollPane(table);
+        scrollPane.setBounds(50, 100, 400, 400);
+        add(scrollPane);
 
         //botonAdd
         botonAdd = new JButton("Añadir");
-        botonAdd.setBounds(200, 550, 170, 30);
+        botonAdd.setBounds(155, 550, 170, 30);
         botonAdd.setFont(new Font("Dialog", Font.BOLD, 16));
         botonAdd.setForeground(Color.BLACK);
         botonAdd.setBackground(Color.white);
         botonAdd.isFocusable();
         add(botonAdd);
 
-        //botonRemove
-        botonRemove = new JButton("Eliminar");
-        botonRemove.setBounds(500, 300, 170, 30);
-        botonRemove.setFont(new Font("Dialog", Font.BOLD, 14));
-        botonRemove.setForeground(Color.BLACK);
-        botonRemove.setBackground(Color.white);
-        add(botonRemove);
-
         //botonEdit
         botonEdit = new JButton("Editar");
-        botonEdit.setBounds(500, 400, 170, 30);
+        botonEdit.setBounds(500, 255, 170, 30);
         botonEdit.setFont(new Font("Dialog", Font.BOLD, 14));
         botonEdit.setForeground(Color.BLACK);
         botonEdit.setBackground(Color.white);
         add(botonEdit);
+
+        //botonRemove
+        botonRemove = new JButton("Eliminar");
+        botonRemove.setBounds(500, 315, 170, 30);
+        botonRemove.setFont(new Font("Dialog", Font.BOLD, 14));
+        botonRemove.setForeground(Color.BLACK);
+        botonRemove.setBackground(Color.white);
+        add(botonRemove);
 
         icono = new JLabel();
         icono.setIcon(new ImageIcon("Imagenes/usuario.png"));
         icono.setBounds(294,33,192,183);
         add(icono);
 
-
+        //Damos el color desde la clase Color a la ventana
+        getContentPane().setBackground(Color.LIGHT_GRAY);
     }
 
     // Funcion que se encargue de los listeners

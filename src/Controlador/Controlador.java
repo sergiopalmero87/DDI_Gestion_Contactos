@@ -1,5 +1,6 @@
 package Controlador;
 
+import Vista.VentanaAdd;
 import Vista.VentanaPrincipal;
 
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class Controlador implements ActionListener {
         //Para ello necesitamos getter de los botones porque son privados.
         //Si el boton ha sido añadir:
         if(e.getSource() == ventana.getBotonAdd()) {
+            VentanaAdd ventanaAdd = new VentanaAdd();
 
         }
         //Si el boton ha sido editar:
