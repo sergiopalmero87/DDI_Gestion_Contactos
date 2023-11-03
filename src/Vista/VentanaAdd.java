@@ -112,8 +112,7 @@ public class VentanaAdd extends JFrame {
 
     public void cancelAdd(){
         JOptionPane.showMessageDialog(this, "Cancelado");
-        nombreAlumno.setText("");
-        telefonoAlumno.setText("");
+
     }
 }
 

@@ -5,7 +5,6 @@ import Vista.VentanaEdit;
 import Vista.VentanaPrincipal;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,20 +29,25 @@ public class Controlador implements ActionListener {
         //Para ello necesitamos getter de los botones porque son privados.
 
         //Si el boton ha sido añadir: Se abre la ventana añadir
-        if(e.getSource() == ventana.getBotonAdd()) {
+        if (e.getSource() == ventana.getBotonAdd()) {
             ventanaAdd = new VentanaAdd();
 
             //Ponemos a la escucha al boton de OK
             ventanaAdd.getBotonOk().addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String telefono = ventanaAdd.getTelefonoAlumno().getText();
+                    //Asignamos variables al contenido que hay dentro del campo de texto.
                     String nombre = ventanaAdd.getNombreAlumno().getText();
-                    if(!nombre.isEmpty() && !telefono.isEmpty()){
+                    String telefono = ventanaAdd.getTelefonoAlumno().getText();
+
+                    //Si los campos estan rellenos se añade el contacto y si no
+                    //lanzamos mensaje.
+                    if (!nombre.isEmpty() && !telefono.isEmpty()) {
                         ventana.addContact(nombre, telefono);
                         ventanaAdd.dispose(); //Cerramos la ventana cuando se hace click
-                    }else{
-                        JOptionPane.showMessageDialog(ventanaAdd, "Por favor, rellene todos los campos para añadir el contacto.");
+                    } else {
+                        JOptionPane.showMessageDialog(ventanaAdd,
+                                "Por favor, rellene todos los campos para añadir el contacto.");
                     }
                 }
             });
@@ -53,19 +57,25 @@ public class Controlador implements ActionListener {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     ventanaAdd.cancelAdd();
+                    ventanaAdd.dispose();
                 }
             });
 
         }
 
-        //Si el boton ha sido editar -> Se abre la ventana editar
-        else if (e.getSource() == ventana.getBotonEdit()){
+            //Si el boton ha sido editar ->
+            else if (e.getSource() == ventana.getBotonEdit()) {
+
+            //Asignamos la fila que seleccionamos de la Table a una variable para poder usarla luego.
             int filaSeleccionada = ventana.getTable().getSelectedRow();
 
-            if(filaSeleccionada == -1){
+            //Si la fila seleccionada es -1 (porque es un array) mandamos el mensaje.
+            if (filaSeleccionada == -1) {
                 JOptionPane.showMessageDialog(ventana, "Seleccione el contacto para editar");
-            }else{
-                //Seleccionamos una fila de la DefaultTableModel y le asignamos variables al contenido.
+
+            //Si seleccionamos una fila de la DefaultTableModel le asignamos variables al contenido.
+            //Hay que convertirlo a String porque filaSelecionado es un Int.
+            } else {
                 String nombreActual = ventana.getTableModel().getValueAt(filaSeleccionada, 0).toString();
                 String telefonoActual = ventana.getTableModel().getValueAt(filaSeleccionada, 1).toString();
 
@@ -80,15 +90,19 @@ public class Controlador implements ActionListener {
                 ventanaEdit.getBotonOk().addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        //Cuando se escriban los nuevos datos los almacenamos en nuevas variables
                         String telefonoNuevo = ventanaEdit.getTelefonoAlumno().getText();
                         String nombreNuevo = ventanaEdit.getNombreAlumno().getText();
 
-                        if(!nombreNuevo.isEmpty() && !telefonoNuevo.isEmpty()){
+                        //Si los campos estan rellenos se actualiza el contenido de la Table
+                        //y si no se lanza el mensaje.
+                        if (!nombreNuevo.isEmpty() && !telefonoNuevo.isEmpty()) {
                             ventana.getTableModel().setValueAt(nombreNuevo, filaSeleccionada, 0);
                             ventana.getTableModel().setValueAt(telefonoNuevo, filaSeleccionada, 1);
                             ventanaEdit.dispose();
-                        }else{
-                            JOptionPane.showMessageDialog(ventanaAdd, "Por favor, rellene todos los campos para editar el contacto.");
+                        } else {
+                            JOptionPane.showMessageDialog(ventanaAdd,
+                                            "Por favor, rellene todos los campos para editar el contacto.");
                         }
                     }
                 });
@@ -98,14 +112,30 @@ public class Controlador implements ActionListener {
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         ventanaEdit.cancelEdit();
+                        ventanaEdit.dispose();
                     }
                 });
             }
 
 
-            }
+        }
+            //Si el boton ha sido eliminar ->
+            else if (e.getSource() == ventana.getBotonRemove()) {
 
+            //Seleccionamos la fila de la tabla que queremos eliminar y la almacenamos en una variable
+            int filaSeleccionada = ventana.getTable().getSelectedRow();
+
+            //Si no se selecciona ninguna fila lanzamos el mensaje
+            if (filaSeleccionada == -1) {
+                JOptionPane.showMessageDialog(ventana, "Seleccione el contacto para eliminar");
+
+            // Elimina la fila seleccionada del DefaultTableModel con el metodo removeRow de la clase DefalutTableModel
+            } else {
+                ventana.getTableModel().removeRow(filaSeleccionada);
+            }
         }
 
     }
+
+}
 
