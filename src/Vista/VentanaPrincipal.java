@@ -119,7 +119,7 @@ public class VentanaPrincipal extends JFrame {
         add(icono);
 
         //Damos el color desde la clase Color a la ventana
-        getContentPane().setBackground(Color.LIGHT_GRAY);
+        getContentPane().setBackground(Color.lightGray);
     }
 
     // Funcion que se encargue de los listeners
