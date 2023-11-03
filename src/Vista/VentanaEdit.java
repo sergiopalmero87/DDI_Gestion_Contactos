@@ -35,6 +35,54 @@ public class VentanaEdit extends JFrame {
         setVisible(true);
     }
 
+    public JButton getBotonOk() {
+        return botonOk;
+    }
+
+    public void setBotonOk(JButton botonOk) {
+        this.botonOk = botonOk;
+    }
+
+    public JButton getBotonCancel() {
+        return botonCancel;
+    }
+
+    public void setBotonCancel(JButton botonCancel) {
+        this.botonCancel = botonCancel;
+    }
+
+    public JTextField getNombreAlumno() {
+        return nombreAlumno;
+    }
+
+    public void setNombreAlumno(JTextField nombreAlumno) {
+        this.nombreAlumno = nombreAlumno;
+    }
+
+    public JTextField getTelefonoAlumno() {
+        return telefonoAlumno;
+    }
+
+    public void setTelefonoAlumno(JTextField telefonoAlumno) {
+        this.telefonoAlumno = telefonoAlumno;
+    }
+
+    public JLabel getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(JLabel nombre) {
+        this.nombre = nombre;
+    }
+
+    public JLabel getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(JLabel telefono) {
+        this.telefono = telefono;
+    }
+
     public void inicializarComponentes(){
         nombre = new JLabel("Nombre: ");
         nombre.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -61,5 +109,11 @@ public class VentanaEdit extends JFrame {
         botonCancel = new JButton("CANCEL");
         botonCancel.setBounds(225, 310,100, 40);
         add(botonCancel);
+    }
+
+    public void cancelEdit(){
+        JOptionPane.showMessageDialog(this, "Cancelado");
+        nombreAlumno.setText("");
+        telefonoAlumno.setText("");
     }
 }

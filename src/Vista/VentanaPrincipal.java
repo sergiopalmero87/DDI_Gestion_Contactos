@@ -123,16 +123,29 @@ public class VentanaPrincipal extends JFrame {
     }
 
     // Funcion que se encargue de los listeners
-    // Publica porque hay que llamarla desde Main
+    // Pública porque hay que llamarla desde Main
     //Parametro: el objeto de la clase que implementa la interfaz ActionListeners
     public void establecerManejador(Controlador controlador) {
 
         // El boton se queda a la escucha y le pasamos como parametro
         // Quien implementa la interfaz ActionListener que es Controlador.
-        botonAdd.addActionListener(new Controlador(this));
+        botonAdd.addActionListener(controlador);
 
-        botonEdit.addActionListener(new Controlador(this));
+        botonEdit.addActionListener(controlador);
 
-        botonRemove.addActionListener(new Controlador(this));
+        botonRemove.addActionListener(controlador);
+    }
+
+    //Funcion add contacto, necesita el nombre y el telefono del contacto para funcionar.
+    public void addContact(String nombre, String telefono){
+        //Creamos un array de String formado por el nombre y el telefono del nuevo cliente.
+        //y luego se lo pasamos al tableModel que es el DefaultTableModel.
+        String[] newContact = {nombre, telefono};
+        tableModel.addRow(newContact);
+    }
+
+    public void editContact(String nombreNuevo, String telefonoNuevo){
+        String[] newContact = {nombreNuevo, telefonoNuevo};
+        tableModel.addRow(newContact);
     }
 }
