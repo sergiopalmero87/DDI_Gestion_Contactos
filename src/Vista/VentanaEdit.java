@@ -90,7 +90,7 @@ public class VentanaEdit extends JFrame {
         add(nombre);
 
         nombreAlumno = new JTextField();
-        nombreAlumno.setBounds(180,80,120,50);
+        nombreAlumno.setBounds(180,85,120,40);
         add(nombreAlumno);
 
         telefono = new JLabel("Telefono: ");
@@ -99,11 +99,11 @@ public class VentanaEdit extends JFrame {
         add(telefono);
 
         telefonoAlumno = new JTextField();
-        telefonoAlumno.setBounds(180,180,120,50);
+        telefonoAlumno.setBounds(180,185,120,40);
         add(telefonoAlumno);
 
         botonOk = new JButton("OK");
-        botonOk.setBounds(125, 310,100, 40);
+        botonOk.setBounds(95, 310,100, 40);
         botonOk.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonOk);
 

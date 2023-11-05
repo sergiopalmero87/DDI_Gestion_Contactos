@@ -4,11 +4,9 @@ import Controlador.Controlador;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-import static java.awt.Cursor.HAND_CURSOR;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -137,6 +135,7 @@ public class VentanaPrincipal extends JFrame {
 
         //Damos el color desde la clase Color a la ventana
         getContentPane().setBackground(new Color(92, 116, 134));
+        getContentPane().validate();
 
     }
 
@@ -159,11 +158,6 @@ public class VentanaPrincipal extends JFrame {
         //Creamos un array de String formado por el nombre y el telefono del nuevo cliente.
         //y luego se lo pasamos al tableModel que es el DefaultTableModel.
         String[] newContact = {nombre, telefono};
-        tableModel.addRow(newContact);
-    }
-
-    public void editContact(String nombreNuevo, String telefonoNuevo){
-        String[] newContact = {nombreNuevo, telefonoNuevo};
         tableModel.addRow(newContact);
     }
 }

@@ -9,7 +9,7 @@ public class VentanaAdd extends JFrame {
     //Varibles globales
     private JButton botonOk, botonCancel;
     private JTextField nombreAlumno, telefonoAlumno;
-    private JLabel nombre, telefono;
+    private JLabel nombre, telefono, nombreInfo, telefonoInfo;
 
     //Constructor
     public VentanaAdd() {
@@ -91,7 +91,7 @@ public class VentanaAdd extends JFrame {
         add(nombre);
 
         nombreAlumno = new JTextField();
-        nombreAlumno.setBounds(180, 80, 120, 50);
+        nombreAlumno.setBounds(180, 85, 120, 40);
         add(nombreAlumno);
 
         telefono = new JLabel("Telefono: ");
@@ -100,16 +100,17 @@ public class VentanaAdd extends JFrame {
         add(telefono);
 
         telefonoAlumno = new JTextField();
-        telefonoAlumno.setBounds(180, 180, 120, 50);
+        telefonoAlumno.setBounds(180, 185, 120, 40);
         add(telefonoAlumno);
 
         botonOk = new JButton("OK");
-        botonOk.setBounds(125, 310, 100, 40);
+        botonOk.setBounds(95, 310, 100, 40);
         botonOk.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        botonOk.setBorder(new BasicBorders.ButtonBorder(Color.blue, Color.BLACK, Color.black, Color.black));
         add(botonOk);
 
         botonCancel = new JButton("CANCEL");
-        botonCancel.setBounds(225, 310, 100, 40);
+        botonCancel.setBounds(220, 310, 100, 40);
         botonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCancel);
     }
