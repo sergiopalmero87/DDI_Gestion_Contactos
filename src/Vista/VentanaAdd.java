@@ -1,6 +1,8 @@
 package Vista;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicBorders;
 import java.awt.*;
 
 public class VentanaAdd extends JFrame {
@@ -103,10 +105,12 @@ public class VentanaAdd extends JFrame {
 
         botonOk = new JButton("OK");
         botonOk.setBounds(125, 310, 100, 40);
+        botonOk.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonOk);
 
         botonCancel = new JButton("CANCEL");
         botonCancel.setBounds(225, 310, 100, 40);
+        botonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCancel);
     }
 

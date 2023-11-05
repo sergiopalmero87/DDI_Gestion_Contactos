@@ -104,10 +104,12 @@ public class VentanaEdit extends JFrame {
 
         botonOk = new JButton("OK");
         botonOk.setBounds(125, 310,100, 40);
+        botonOk.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonOk);
 
         botonCancel = new JButton("CANCEL");
         botonCancel.setBounds(225, 310,100, 40);
+        botonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCancel);
     }
 

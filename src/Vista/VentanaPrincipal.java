@@ -3,12 +3,12 @@ package Vista;
 import Controlador.Controlador;
 
 import javax.swing.*;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
-import javax.swing.plaf.basic.BasicBorders;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+
+import static java.awt.Cursor.HAND_CURSOR;
 
 public class VentanaPrincipal extends JFrame {
 
@@ -36,6 +36,10 @@ public class VentanaPrincipal extends JFrame {
 
         // evitamos que el cliente pueda modificar el tamaño
         setResizable(false);
+
+        // Desactivamos el organizador de los componentes antes de llamar a la funcion
+        // porque los situamos nosotros.
+        setLayout(null);
 
         // Ponemos imagen en la ventana
         setIconImage(Toolkit.getDefaultToolkit().getImage("Imagenes/usuario.png"));
@@ -94,12 +98,16 @@ public class VentanaPrincipal extends JFrame {
         table.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 14));
         add(scrollPane);
 
+        // Crear un borde redondeado para el botón
+        Border bordeRedondeado = BorderFactory.createEmptyBorder(10, 20, 10, 20);
+
         //botonAdd
         botonAdd = new JButton("Añadir");
         botonAdd.setBounds(155, 550, 190, 35);
         botonAdd.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 18));
         botonAdd.setForeground(Color.BLACK);
         botonAdd.setBackground(new Color(231, 76, 60  ));
+        botonAdd.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonAdd);
 
 
@@ -109,6 +117,7 @@ public class VentanaPrincipal extends JFrame {
         botonEdit.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         botonEdit.setForeground(Color.BLACK);
         botonEdit.setBackground(new Color(144, 238, 144));
+        botonEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonEdit);
 
         //botonRemove
@@ -117,16 +126,18 @@ public class VentanaPrincipal extends JFrame {
         botonRemove.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         botonRemove.setForeground(Color.BLACK);
         botonRemove.setBackground(Color.white);
+        botonRemove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonRemove);
 
-        icono = new JLabel();
+        //Icono
+        icono = new JLabel("ICONO");
         icono.setIcon(new ImageIcon("Imagenes/usuario.png"));
-        icono.setBounds(50,33,50,40);
+        icono.setBounds(50,25,50,50);
         add(icono);
 
         //Damos el color desde la clase Color a la ventana
-        getContentPane().setBackground(new Color(128, 139, 150 ));
-        getScrollPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(new Color(92, 116, 134));
+
     }
 
     // Funcion que se encargue de los listeners
