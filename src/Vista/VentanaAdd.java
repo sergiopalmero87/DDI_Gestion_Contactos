@@ -1,7 +1,6 @@
 package Vista;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicBorders;
 import java.awt.*;
 
@@ -15,6 +14,9 @@ public class VentanaAdd extends JFrame {
     public VentanaAdd() {
         //Titulo
         setTitle("Añadir contacto");
+
+        //Color ventana.
+        setBackground(new Color(81, 110, 215));
 
         // Tamaño en pixels ancho y alto.
         setSize(400, 400);
@@ -86,7 +88,7 @@ public class VentanaAdd extends JFrame {
 
     public void inicializarComponentes() {
         nombre = new JLabel("Nombre: ");
-        nombre.setFont(new Font("Dialog", Font.BOLD, 14));
+        nombre.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         nombre.setBounds(100, 80, 120, 50);
         add(nombre);
 
@@ -94,14 +96,24 @@ public class VentanaAdd extends JFrame {
         nombreAlumno.setBounds(180, 85, 120, 40);
         add(nombreAlumno);
 
+        nombreInfo = new JLabel("Solo letras.");
+        nombreInfo.setBounds(190, 120, 120, 20);
+        nombreInfo.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 12));
+        add(nombreInfo);
+
         telefono = new JLabel("Telefono: ");
-        telefono.setFont(new Font("Dialog", Font.BOLD, 14));
+        telefono.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         telefono.setBounds(100, 180, 120, 50);
         add(telefono);
 
         telefonoAlumno = new JTextField();
         telefonoAlumno.setBounds(180, 185, 120, 40);
         add(telefonoAlumno);
+
+        telefonoInfo = new JLabel("Solo numeros.");
+        telefonoInfo.setBounds(190, 220, 120, 20);
+        telefonoInfo.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 12));
+        add(telefonoInfo);
 
         botonOk = new JButton("OK");
         botonOk.setBounds(95, 310, 100, 40);

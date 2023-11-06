@@ -6,26 +6,28 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.io.IOException;
 
 
 public class VentanaPrincipal extends JFrame {
 
     //Variable globales
     private JButton botonAdd, botonEdit, botonRemove;
-
+    private JLabel nombreApp;
     //Para la tabla necesitamos el defaultModel que es donde se meten los datos
     //Luego esos datos se meten en la tabla y la tabla en el ScrollPane por si hay desbordamiento de los datos.
     private JTable table;
     private DefaultTableModel tableModel;
     private JScrollPane scrollPane;
 
-    private JLabel icono;
-
 
     //Constructor
     public VentanaPrincipal(){
         // Creamos titulo de la ventana
         setTitle("Gestion de contactos");
+
+        //Icono de la aplicacion.
+        setIconImage(Toolkit.getDefaultToolkit().getImage("Imagenes/contacto.png"));
 
         setSize(700, 700); // Tamaño en pixels ancho y alto.
 
@@ -39,15 +41,8 @@ public class VentanaPrincipal extends JFrame {
         // porque los situamos nosotros.
         setLayout(null);
 
-        // Ponemos imagen en la ventana
-        setIconImage(Toolkit.getDefaultToolkit().getImage("Imagenes/usuario.png"));
-
         // Comportamiento de la X de la ventana.
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Esto hace que se cierre.
-
-        // Desactivamos el organizador de los componentes antes de llamar a la funcion
-        // porque los situamos nosotros.
-        setLayout(null);
 
         // Para no tener todas las cosas en el constructor, creamos funciones con logica.
         inicializarComponentes();
@@ -92,19 +87,37 @@ public class VentanaPrincipal extends JFrame {
         tableModel = new DefaultTableModel(nombreColumnas, 0);
         table = new JTable(tableModel);
         scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 100, 400, 400);
+        scrollPane.setBounds(50, 100, 400, 420);
         table.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 14));
         add(scrollPane);
 
         // Crear un borde redondeado para el botón
         Border bordeRedondeado = BorderFactory.createEmptyBorder(10, 20, 10, 20);
 
+        //Fuente del titulo de mi app.
+        try {
+            Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("cubic.ttf"));
+            nombreApp = new JLabel("CONTACTIFY");
+            nombreApp.setHorizontalAlignment(SwingConstants.CENTER);
+            nombreApp.setFont(font.deriveFont(Font.BOLD, 40f));
+            nombreApp.setBounds(45, 20, 400, 70);
+            nombreApp.setForeground(Color.WHITE);
+            add(nombreApp);
+
+        } catch (FontFormatException e) {
+            
+            e.printStackTrace();
+        } catch (IOException e) {
+            
+            e.printStackTrace();
+        }
+
         //botonAdd
         botonAdd = new JButton("Añadir");
         botonAdd.setBounds(155, 550, 190, 35);
         botonAdd.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 18));
         botonAdd.setForeground(Color.BLACK);
-        botonAdd.setBackground(new Color(231, 76, 60  ));
+        botonAdd.setBackground(Color.WHITE);
         botonAdd.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonAdd);
 
@@ -114,7 +127,7 @@ public class VentanaPrincipal extends JFrame {
         botonEdit.setBounds(500, 255, 170, 35);
         botonEdit.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         botonEdit.setForeground(Color.BLACK);
-        botonEdit.setBackground(new Color(144, 238, 144));
+        botonEdit.setBackground(Color.WHITE);
         botonEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonEdit);
 
@@ -123,18 +136,18 @@ public class VentanaPrincipal extends JFrame {
         botonRemove.setBounds(500, 315, 170, 35);
         botonRemove.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         botonRemove.setForeground(Color.BLACK);
-        botonRemove.setBackground(Color.white);
+        botonRemove.setBackground(Color.WHITE);
         botonRemove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonRemove);
 
-        //Icono
-        icono = new JLabel("ICONO");
-        icono.setIcon(new ImageIcon("Imagenes/usuario.png"));
-        icono.setBounds(50,25,50,50);
-        add(icono);
+        //Icono de la aplicacion en la ventana principal
+        Image image = new ImageIcon("Imagenes/contacto.png").getImage();
+        JLabel logo = new JLabel(new ImageIcon(image.getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
+        logo.setBounds(540,25,80,80);
+        add(logo);
 
         //Damos el color desde la clase Color a la ventana
-        getContentPane().setBackground(new Color(92, 116, 134));
+        getContentPane().setBackground(new Color(81, 110, 215));
         getContentPane().validate();
 
     }
