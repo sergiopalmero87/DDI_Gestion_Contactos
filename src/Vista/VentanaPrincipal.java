@@ -10,7 +10,7 @@ import java.io.IOException;
 public class VentanaPrincipal extends JFrame {
 
     // Variable globales
-    private JButton botonAdd, botonEdit, botonRemove;
+    private JButton botonAdd, botonEdit, botonRemove, botonGuardar, botonCargar;
     private JLabel nombreApp;
     // Para la tabla necesitamos el defaultModel que es donde se meten los datos
     // Luego esos datos se meten en la tabla y la tabla en el ScrollPane por si hay
@@ -76,7 +76,6 @@ public class VentanaPrincipal extends JFrame {
         return scrollPane;
     }
 
-    
     private void inicializarComponentes() {
 
         // Tabla
@@ -121,7 +120,7 @@ public class VentanaPrincipal extends JFrame {
 
         // botonEdit
         botonEdit = new JButton("Editar");
-        botonEdit.setBounds(500, 255, 170, 35);
+        botonEdit.setBounds(500, 200, 170, 35);
         botonEdit.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         botonEdit.setForeground(Color.BLACK);
         botonEdit.setBackground(Color.WHITE);
@@ -130,12 +129,30 @@ public class VentanaPrincipal extends JFrame {
 
         // botonRemove
         botonRemove = new JButton("Eliminar");
-        botonRemove.setBounds(500, 315, 170, 35);
+        botonRemove.setBounds(500, 250, 170, 35);
         botonRemove.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
         botonRemove.setForeground(Color.BLACK);
         botonRemove.setBackground(Color.WHITE);
         botonRemove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonRemove);
+
+        // boton guardar.
+        botonGuardar = new JButton("Guardar");
+        botonGuardar.setBounds(500, 350, 170, 35);
+        botonGuardar.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        botonGuardar.setForeground(Color.BLACK);
+        botonGuardar.setBackground(Color.WHITE);
+        botonGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        add(botonGuardar);
+
+        // boton cargar.
+        botonCargar = new JButton("Cargar");
+        botonCargar.setBounds(500, 400, 170, 35);
+        botonCargar.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        botonCargar.setForeground(Color.BLACK);
+        botonCargar.setBackground(Color.WHITE);
+        botonCargar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        add(botonCargar);
 
         // Icono de la aplicacion en la ventana principal
         Image image = new ImageIcon("Imagenes/contacto.png").getImage();
