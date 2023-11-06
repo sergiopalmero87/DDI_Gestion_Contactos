@@ -3,30 +3,28 @@ package Vista;
 import Controlador.Controlador;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.io.IOException;
 
-
 public class VentanaPrincipal extends JFrame {
 
-    //Variable globales
+    // Variable globales
     private JButton botonAdd, botonEdit, botonRemove;
     private JLabel nombreApp;
-    //Para la tabla necesitamos el defaultModel que es donde se meten los datos
-    //Luego esos datos se meten en la tabla y la tabla en el ScrollPane por si hay desbordamiento de los datos.
+    // Para la tabla necesitamos el defaultModel que es donde se meten los datos
+    // Luego esos datos se meten en la tabla y la tabla en el ScrollPane por si hay
+    // desbordamiento de los datos.
     private JTable table;
     private DefaultTableModel tableModel;
     private JScrollPane scrollPane;
 
-
-    //Constructor
-    public VentanaPrincipal(){
+    // Constructor
+    public VentanaPrincipal() {
         // Creamos titulo de la ventana
         setTitle("Gestion de contactos");
 
-        //Icono de la aplicacion.
+        // Icono de la aplicacion.
         setIconImage(Toolkit.getDefaultToolkit().getImage("Imagenes/contacto.png"));
 
         setSize(700, 700); // Tamaño en pixels ancho y alto.
@@ -44,7 +42,8 @@ public class VentanaPrincipal extends JFrame {
         // Comportamiento de la X de la ventana.
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Esto hace que se cierre.
 
-        // Para no tener todas las cosas en el constructor, creamos funciones con logica.
+        // Para no tener todas las cosas en el constructor, creamos funciones con
+        // logica.
         inicializarComponentes();
 
         // Una vez creada la ventana, al final, tenemos que hacer la visible.
@@ -52,7 +51,7 @@ public class VentanaPrincipal extends JFrame {
 
     }
 
-    //Getters porque los atributos son privados
+    // Getters porque los atributos son privados
     public JButton getBotonAdd() {
         return botonAdd;
     }
@@ -77,13 +76,15 @@ public class VentanaPrincipal extends JFrame {
         return scrollPane;
     }
 
-    private void inicializarComponentes(){
+    
+    private void inicializarComponentes() {
 
-        //Tabla
-        //Array de String con las columnas que hay(en este caso 2: Nombre y Telefono).
-        String[] nombreColumnas = {"NOMBRE", "TELEFONO"};
-        //El constructor nos pide el nombre de las columnas y el numero inicial de filas.
-        //Le damos 0 filas porque se crearan cuando se haga click en añadir.
+        // Tabla
+        // Array de String con las columnas que hay(en este caso 2: Nombre y Telefono).
+        String[] nombreColumnas = { "NOMBRE", "TELEFONO" };
+        // El constructor nos pide el nombre de las columnas y el numero inicial de
+        // filas.
+        // Le damos 0 filas porque se crearan cuando se haga click en añadir.
         tableModel = new DefaultTableModel(nombreColumnas, 0);
         table = new JTable(tableModel);
         scrollPane = new JScrollPane(table);
@@ -91,10 +92,7 @@ public class VentanaPrincipal extends JFrame {
         table.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 14));
         add(scrollPane);
 
-        // Crear un borde redondeado para el botón
-        Border bordeRedondeado = BorderFactory.createEmptyBorder(10, 20, 10, 20);
-
-        //Fuente del titulo de mi app.
+        // Fuente del titulo de mi app.
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("cubic.ttf"));
             nombreApp = new JLabel("CONTACTIFY");
@@ -105,14 +103,14 @@ public class VentanaPrincipal extends JFrame {
             add(nombreApp);
 
         } catch (FontFormatException e) {
-            
+
             e.printStackTrace();
         } catch (IOException e) {
-            
+
             e.printStackTrace();
         }
 
-        //botonAdd
+        // botonAdd
         botonAdd = new JButton("Añadir");
         botonAdd.setBounds(155, 550, 190, 35);
         botonAdd.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 18));
@@ -121,8 +119,7 @@ public class VentanaPrincipal extends JFrame {
         botonAdd.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonAdd);
 
-
-        //botonEdit
+        // botonEdit
         botonEdit = new JButton("Editar");
         botonEdit.setBounds(500, 255, 170, 35);
         botonEdit.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
@@ -131,7 +128,7 @@ public class VentanaPrincipal extends JFrame {
         botonEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonEdit);
 
-        //botonRemove
+        // botonRemove
         botonRemove = new JButton("Eliminar");
         botonRemove.setBounds(500, 315, 170, 35);
         botonRemove.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
@@ -140,13 +137,13 @@ public class VentanaPrincipal extends JFrame {
         botonRemove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonRemove);
 
-        //Icono de la aplicacion en la ventana principal
+        // Icono de la aplicacion en la ventana principal
         Image image = new ImageIcon("Imagenes/contacto.png").getImage();
         JLabel logo = new JLabel(new ImageIcon(image.getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-        logo.setBounds(540,25,80,80);
+        logo.setBounds(540, 25, 80, 80);
         add(logo);
 
-        //Damos el color desde la clase Color a la ventana
+        // Damos el color desde la clase Color a la ventana
         getContentPane().setBackground(new Color(81, 110, 215));
         getContentPane().validate();
 
@@ -154,7 +151,7 @@ public class VentanaPrincipal extends JFrame {
 
     // Funcion que se encargue de los listeners
     // Pública porque hay que llamarla desde Main
-    //Parametro: el objeto de la clase que implementa la interfaz ActionListeners
+    // Parametro: el objeto de la clase que implementa la interfaz ActionListeners
     public void establecerManejador(Controlador controlador) {
 
         // El boton se queda a la escucha y le pasamos como parametro
@@ -166,11 +163,13 @@ public class VentanaPrincipal extends JFrame {
         botonRemove.addActionListener(controlador);
     }
 
-    //Funcion add contacto, necesita el nombre y el telefono del contacto para funcionar.
-    public void addContact(String nombre, String telefono){
-        //Creamos un array de String formado por el nombre y el telefono del nuevo cliente.
-        //y luego se lo pasamos al tableModel que es el DefaultTableModel.
-        String[] newContact = {nombre, telefono};
+    // Funcion add contacto, necesita el nombre y el telefono del contacto para
+    // funcionar.
+    public void addContact(String nombre, String telefono) {
+        // Creamos un array de String formado por el nombre y el telefono del nuevo
+        // cliente.
+        // y luego se lo pasamos al tableModel que es el DefaultTableModel.
+        String[] newContact = { nombre, telefono };
         tableModel.addRow(newContact);
     }
 }
