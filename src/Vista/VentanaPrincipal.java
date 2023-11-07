@@ -5,7 +5,6 @@ import Controlador.Controlador;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.MouseListener;
 import java.io.IOException;
 
 public class VentanaPrincipal extends JFrame {

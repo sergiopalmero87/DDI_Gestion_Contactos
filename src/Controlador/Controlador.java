@@ -47,7 +47,7 @@ public class Controlador implements ActionListener {
                     // lanzamos mensaje.
                     // Utilizamos expresiones regulares dentro del if que nos sirven para validar.
                     if (!nombre.isEmpty() && nombre.matches("[a-zA-Z]+") && !telefono.isEmpty()
-                            && telefono.matches("[0-9]+") && telefono.length() <= 9) {
+                            && telefono.matches("[0-9]+") && telefono.length() == 9) {
                         ventana.addContact(nombre, telefono);
                         ventanaAdd.dispose(); // Cerramos la ventana cuando se hace click
                     } else {
@@ -104,7 +104,7 @@ public class Controlador implements ActionListener {
                         // Si los campos estan rellenos se actualiza el contenido de la Table
                         // y si no se lanza el mensaje.
                         if (!nombreNuevo.isEmpty() && nombreNuevo.matches("[a-zA-z]+") && !telefonoNuevo.isEmpty()
-                                && telefonoNuevo.matches("[0-9]+") && telefonoNuevo.length() <= 9) {
+                                && telefonoNuevo.matches("[0-9]+") && telefonoNuevo.length() == 9) {
                             ventana.getTableModel().setValueAt(nombreNuevo, filaSeleccionada, 0);
                             ventana.getTableModel().setValueAt(telefonoNuevo, filaSeleccionada, 1);
                             ventanaEdit.dispose();

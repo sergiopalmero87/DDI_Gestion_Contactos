@@ -1,4 +1,4 @@
-package Controlador;
+ package Controlador;
 
 import Vista.VentanaPrincipal;
 
