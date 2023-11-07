@@ -1,7 +1,6 @@
 package Vista;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicBorders;
 import java.awt.*;
 
 public class VentanaAdd extends JFrame {

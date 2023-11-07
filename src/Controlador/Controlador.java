@@ -144,6 +144,16 @@ public class Controlador implements ActionListener {
             }
         }
 
+        else if(e.getSource() == ventana.getBotonGuardar()){
+            JOptionPane.showMessageDialog(ventana, "¡Guardado!");
+
+        }
+
+        else if (e.getSource() == ventana.getBotonCargar()){
+            JOptionPane.showMessageDialog(ventana, "Cargando...");
+            
+        }
+
     }
 
 }
