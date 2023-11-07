@@ -121,6 +121,8 @@ public class VentanaEdit extends JFrame {
         botonCancel.setBounds(225, 310,100, 40);
         botonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCancel);
+
+        getContentPane().setBackground(new Color(81, 110, 215));
     }
 
     public void cancelEdit(){

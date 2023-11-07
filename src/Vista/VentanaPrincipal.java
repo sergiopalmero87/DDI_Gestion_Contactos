@@ -76,6 +76,14 @@ public class VentanaPrincipal extends JFrame {
         return scrollPane;
     }
 
+    public JButton getBotonGuardar() {
+        return botonGuardar;
+    }
+
+    public JButton getBotonCargar() {
+        return botonCargar;
+    }
+
     private void inicializarComponentes() {
 
         // Tabla
@@ -178,6 +186,10 @@ public class VentanaPrincipal extends JFrame {
         botonEdit.addActionListener(controlador);
 
         botonRemove.addActionListener(controlador);
+
+        botonGuardar.addActionListener(controlador);
+
+        botonCargar.addActionListener(controlador);
     }
 
     // Funcion add contacto, necesita el nombre y el telefono del contacto para

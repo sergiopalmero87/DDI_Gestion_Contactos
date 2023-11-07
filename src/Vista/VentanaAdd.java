@@ -15,9 +15,6 @@ public class VentanaAdd extends JFrame {
         //Titulo
         setTitle("Añadir contacto");
 
-        //Color ventana.
-        setBackground(new Color(81, 110, 215));
-
         // Tamaño en pixels ancho y alto.
         setSize(400, 400);
 
@@ -118,18 +115,18 @@ public class VentanaAdd extends JFrame {
         botonOk = new JButton("OK");
         botonOk.setBounds(95, 310, 100, 40);
         botonOk.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        botonOk.setBorder(new BasicBorders.ButtonBorder(Color.blue, Color.BLACK, Color.black, Color.black));
         add(botonOk);
 
         botonCancel = new JButton("CANCEL");
         botonCancel.setBounds(220, 310, 100, 40);
         botonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCancel);
+
+        getContentPane().setBackground(new Color(81, 110, 215));
     }
 
     public void cancelAdd(){
         JOptionPane.showMessageDialog(this, "Cancelado");
-
     }
 }
 
