@@ -169,7 +169,7 @@ public class VentanaPrincipal extends JFrame {
         add(logo);
 
         // Damos el color desde la clase Color a la ventana
-        getContentPane().setBackground(new Color(81, 110, 215));
+        getContentPane().setBackground(new Color(50, 95, 121));
         getContentPane().validate();
 
     }
