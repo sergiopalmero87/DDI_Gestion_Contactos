@@ -50,9 +50,16 @@ public class Controlador implements ActionListener {
                             && telefono.matches("[0-9]+") && telefono.length() == 9) {
                         ventana.addContact(nombre, telefono);
                         ventanaAdd.dispose(); // Cerramos la ventana cuando se hace click
-                    } else {
+
+                      //Si el nombre esta mal relleno lanzamos mensaje  
+                    } else if(nombre.isEmpty() || !nombre.matches("[a-zA-Z]+")){
                         JOptionPane.showMessageDialog(ventanaAdd,
-                                "Por favor, rellene correctamente todos los campos para añadir el contacto.");
+                                "Por favor, escriba su nombre correctamente para añadir el contacto.");
+
+                      //Si el telefono esta mal relleno lanzamos mensaje         
+                    } else if(telefono.isEmpty() || telefono.length() != 9){
+                        JOptionPane.showMessageDialog(ventanaAdd,
+                                "Por favor, escriba su teléfono correctamente para añadir el contacto.");
                     }
                 }
             });
@@ -69,7 +76,7 @@ public class Controlador implements ActionListener {
         }
 
         // Si el boton ha sido editar ->
-        else if (e.getSource() == ventana.getBotonEdit()) {
+        if (e.getSource() == ventana.getBotonEdit()) {
 
             // Asignamos la fila que seleccionamos de la Table a una variable para poder
             // usarla luego.
@@ -108,9 +115,12 @@ public class Controlador implements ActionListener {
                             ventana.getTableModel().setValueAt(nombreNuevo, filaSeleccionada, 0);
                             ventana.getTableModel().setValueAt(telefonoNuevo, filaSeleccionada, 1);
                             ventanaEdit.dispose();
-                        } else {
+                        } else if(nombreNuevo.isEmpty() || !nombreNuevo.matches("[a-zA-Z]+")){
                             JOptionPane.showMessageDialog(ventanaAdd,
-                                    "Por favor, rellene correctamente todos los campos para editar el contacto.");
+                                    "Por favor, escriba correctamente el nombre para editar el contacto.");
+                        } else if(telefonoNuevo.isEmpty() || telefonoNuevo.length() != 9){
+                            JOptionPane.showMessageDialog(ventanaAdd,
+                                    "Por favor, escriba correctamente el teléfono para editar el contacto.");
                         }
                     }
                 });
@@ -127,7 +137,7 @@ public class Controlador implements ActionListener {
 
         }
         // Si el boton ha sido eliminar ->
-        else if (e.getSource() == ventana.getBotonRemove()) {
+        if (e.getSource() == ventana.getBotonRemove()) {
 
             // Seleccionamos la fila de la tabla que queremos eliminar y la almacenamos en
             // una variable
@@ -144,12 +154,14 @@ public class Controlador implements ActionListener {
             }
         }
 
-        else if(e.getSource() == ventana.getBotonGuardar()){
+        //Si el boton ha sido guardar:
+        if(e.getSource() == ventana.getBotonGuardar()){
             JOptionPane.showMessageDialog(ventana, "¡Guardado!");
 
         }
 
-        else if (e.getSource() == ventana.getBotonCargar()){
+        //Si el boton ha sido cargar:
+        if (e.getSource() == ventana.getBotonCargar()){
             JOptionPane.showMessageDialog(ventana, "Cargando...");
             
         }
