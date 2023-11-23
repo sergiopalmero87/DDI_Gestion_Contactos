@@ -27,7 +27,7 @@ public class VentanaPrincipal extends JFrame {
         // Icono de la aplicacion.
         setIconImage(Toolkit.getDefaultToolkit().getImage("Imagenes/contacto.png"));
 
-        setSize(700, 700); // Tamaño en pixels ancho y alto.
+        setSize(600, 700); // Tamaño en pixels ancho y alto.
 
         setLocationRelativeTo(null); // Esto lo centra en la pantalla.
         // Lo de arriba lo puedo hacer con setBounds(x, y, ancho y alto);
@@ -95,8 +95,8 @@ public class VentanaPrincipal extends JFrame {
         tableModel = new DefaultTableModel(nombreColumnas, 0);
         table = new JTable(tableModel);
         scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 100, 400, 420);
-        table.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 14));
+        scrollPane.setBounds(50, 100, 300, 420);
+        table.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 14));
         add(scrollPane);
 
         // Fuente del titulo de mi app.
@@ -105,7 +105,7 @@ public class VentanaPrincipal extends JFrame {
             nombreApp = new JLabel("CONTACTIFY");
             nombreApp.setHorizontalAlignment(SwingConstants.CENTER);
             nombreApp.setFont(font.deriveFont(Font.BOLD, 40f));
-            nombreApp.setBounds(45, 20, 400, 70);
+            nombreApp.setBounds(0, 20, 400, 70);
             nombreApp.setForeground(Color.WHITE);
             add(nombreApp);
 
@@ -119,8 +119,8 @@ public class VentanaPrincipal extends JFrame {
 
         // botonAdd
         botonAdd = new JButton("Añadir");
-        botonAdd.setBounds(155, 550, 190, 35);
-        botonAdd.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 18));
+        botonAdd.setBounds(100, 550, 190, 35);
+        botonAdd.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 18));
         botonAdd.setForeground(Color.BLACK);
         botonAdd.setBackground(Color.WHITE);
         botonAdd.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -128,8 +128,8 @@ public class VentanaPrincipal extends JFrame {
 
         // botonEdit
         botonEdit = new JButton("Editar");
-        botonEdit.setBounds(500, 200, 170, 35);
-        botonEdit.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        botonEdit.setBounds(400, 200, 170, 35);
+        botonEdit.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonEdit.setForeground(Color.BLACK);
         botonEdit.setBackground(Color.WHITE);
         botonEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -137,8 +137,8 @@ public class VentanaPrincipal extends JFrame {
 
         // botonRemove
         botonRemove = new JButton("Eliminar");
-        botonRemove.setBounds(500, 250, 170, 35);
-        botonRemove.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        botonRemove.setBounds(400, 250, 170, 35);
+        botonRemove.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonRemove.setForeground(Color.BLACK);
         botonRemove.setBackground(Color.WHITE);
         botonRemove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -146,8 +146,8 @@ public class VentanaPrincipal extends JFrame {
 
         // boton guardar.
         botonGuardar = new JButton("Guardar");
-        botonGuardar.setBounds(500, 350, 170, 35);
-        botonGuardar.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        botonGuardar.setBounds(400, 350, 170, 35);
+        botonGuardar.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonGuardar.setForeground(Color.BLACK);
         botonGuardar.setBackground(Color.WHITE);
         botonGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -155,8 +155,8 @@ public class VentanaPrincipal extends JFrame {
 
         // boton cargar.
         botonCargar = new JButton("Cargar");
-        botonCargar.setBounds(500, 400, 170, 35);
-        botonCargar.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        botonCargar.setBounds(400, 400, 170, 35);
+        botonCargar.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonCargar.setForeground(Color.BLACK);
         botonCargar.setBackground(Color.WHITE);
         botonCargar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -165,7 +165,7 @@ public class VentanaPrincipal extends JFrame {
         // Icono de la aplicacion en la ventana principal
         Image image = new ImageIcon("Imagenes/contacto.png").getImage();
         JLabel logo = new JLabel(new ImageIcon(image.getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-        logo.setBounds(540, 25, 80, 80);
+        logo.setBounds(440, 25, 80, 80);
         add(logo);
 
         // Damos el color desde la clase Color a la ventana

@@ -84,7 +84,7 @@ public class VentanaAdd extends JDialog {
 
     public void inicializarComponentes() {
         nombre = new JLabel("Nombre: ");
-        nombre.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        nombre.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         nombre.setForeground(Color.WHITE);
         nombre.setBounds(100, 80, 120, 50);
         add(nombre);
@@ -95,12 +95,12 @@ public class VentanaAdd extends JDialog {
 
         nombreInfo = new JLabel("Solo letras.");
         nombreInfo.setBounds(190, 120, 120, 20);
-        nombreInfo.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 12));
+        nombreInfo.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 12));
         nombreInfo.setForeground(Color.WHITE);
         add(nombreInfo);
 
         telefono = new JLabel("Telefono: ");
-        telefono.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 16));
+        telefono.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         telefono.setForeground(Color.WHITE);
         telefono.setBounds(100, 180, 120, 50);
         add(telefono);
@@ -109,9 +109,9 @@ public class VentanaAdd extends JDialog {
         telefonoAlumno.setBounds(180, 185, 120, 40);
         add(telefonoAlumno);
 
-        telefonoInfo = new JLabel("Solo numeros.");
+        telefonoInfo = new JLabel("Solo numeros. (9)");
         telefonoInfo.setBounds(190, 220, 120, 20);
-        telefonoInfo.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 12));
+        telefonoInfo.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 12));
         telefonoInfo.setForeground(Color.WHITE);
         add(telefonoInfo);
 

@@ -110,7 +110,7 @@ public class VentanaEdit extends JDialog {
         telefonoAlumno.setBounds(180,185,120,40);
         add(telefonoAlumno);
 
-        telefonoInfo = new JLabel("Solo numeros.");
+        telefonoInfo = new JLabel("Solo numeros. (9)");
         telefonoInfo.setBounds(190, 220, 120, 20);
         telefonoInfo.setFont(new Font("HelveticaNeue.ttc", Font.PLAIN, 12));
         telefonoInfo.setForeground(Color.WHITE);
