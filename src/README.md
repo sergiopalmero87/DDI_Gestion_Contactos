@@ -4,11 +4,15 @@
     de dos columnas y con tres botones para la lógica. La tabla debe disponer
     de una barra de desplazamiento por si hay desbordamientos de filas.
 
+    ![Ventana principal](/Imagenes/REQ1.png)
+
 2.  Agregar un botón "Añadir contacto" en la ventana principal. Al hacer clic en
     el botón "Añadir contacto", se abrirá una nueva ventana emergente que
     permitirá al usuario ingresar los detalles del contacto: nombre y número
     de teléfono. Después de ingresar los detalles del contacto y hacer clic en
-    "OK", el contacto se agregará a la lista en la ventana principal. (1.5 puntos)
+    "OK", el contacto se agregará a la lista en la ventana principal.
+
+    ![Añadir contacto](/Imagenes/REQ2.png)
 
 3.  Agregar un botón "Editar". Al hacer clic en este botón, se abrirá otra ventana
     emergente que permitirá al usuario editar los detalles del contacto
@@ -16,11 +20,21 @@
     de la ventana principal se actualizará automáticamente con los datos
     modificados. 
 
+    ![Editar contacto](/Imagenes/REQ3.png)
+
+    ![Contacto editado](/Imagenes/REQ3_2.png)
+
 4.  Agregar un botón "Eliminar". Al hacer clic en este botón, se eliminará el
     contacto de la lista que se haya seleccionado.
 
+    ![Contacto eliminado](/Imagenes/REQ4.png)
+
 5.  (Sugerencia opcional) Agregar la opción de guardar la lista de tareas en un
     archivo y cargarla nuevamente en la aplicación.
+
+    ![Guardar contactos](/Imagenes/Guardar.png)
+
+    ![Cargar contactos](/Imagenes/Cargar.png)
 
 # Requerimiento 2
 
