@@ -3,7 +3,7 @@ package Vista;
 import javax.swing.*;
 import java.awt.*;
 
-public class VentanaEdit extends JFrame {
+public class VentanaEdit extends JDialog {
 
     //Varibles globales
     private JButton botonOk, botonCancel;
