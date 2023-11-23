@@ -101,7 +101,7 @@ public class VentanaPrincipal extends JFrame {
 
         // Fuente del titulo de mi app.
         try {
-            Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("cubic.ttf"));
+            Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("JetBrainsMono-Regular.ttf"));
             nombreApp = new JLabel("CONTACTIFY");
             nombreApp.setHorizontalAlignment(SwingConstants.CENTER);
             nombreApp.setFont(font.deriveFont(Font.BOLD, 40f));
