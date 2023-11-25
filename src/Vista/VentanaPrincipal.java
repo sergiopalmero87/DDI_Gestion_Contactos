@@ -19,15 +19,17 @@ public class VentanaPrincipal extends JFrame {
     private DefaultTableModel tableModel;
     private JScrollPane scrollPane;
 
+    private  JLabel logo;
+
     // Constructor
     public VentanaPrincipal() {
         // Creamos titulo de la ventana
-        setTitle("Gestion de contactos");
+        setTitle("CONTACTIFY");
 
         // Icono de la aplicacion.
         setIconImage(Toolkit.getDefaultToolkit().getImage("Imagenes/contacto.png"));
 
-        setSize(600, 700); // Tamaño en pixels ancho y alto.
+        setSize(560, 700); // Tamaño en pixels ancho y alto.
 
         setLocationRelativeTo(null); // Esto lo centra en la pantalla.
         // Lo de arriba lo puedo hacer con setBounds(x, y, ancho y alto);
@@ -119,7 +121,7 @@ public class VentanaPrincipal extends JFrame {
 
         // botonAdd
         botonAdd = new JButton("Añadir");
-        botonAdd.setBounds(100, 550, 190, 35);
+        botonAdd.setBounds(120, 550, 150, 35);
         botonAdd.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 18));
         botonAdd.setForeground(Color.BLACK);
         botonAdd.setBackground(Color.WHITE);
@@ -128,7 +130,7 @@ public class VentanaPrincipal extends JFrame {
 
         // botonEdit
         botonEdit = new JButton("Editar");
-        botonEdit.setBounds(400, 200, 170, 35);
+        botonEdit.setBounds(400, 200, 120, 35);
         botonEdit.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonEdit.setForeground(Color.BLACK);
         botonEdit.setBackground(Color.WHITE);
@@ -137,7 +139,7 @@ public class VentanaPrincipal extends JFrame {
 
         // botonRemove
         botonRemove = new JButton("Eliminar");
-        botonRemove.setBounds(400, 250, 170, 35);
+        botonRemove.setBounds(400, 250, 120, 35);
         botonRemove.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonRemove.setForeground(Color.BLACK);
         botonRemove.setBackground(Color.WHITE);
@@ -146,7 +148,7 @@ public class VentanaPrincipal extends JFrame {
 
         // boton guardar.
         botonGuardar = new JButton("Guardar");
-        botonGuardar.setBounds(400, 350, 170, 35);
+        botonGuardar.setBounds(400, 350, 120, 35);
         botonGuardar.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonGuardar.setForeground(Color.BLACK);
         botonGuardar.setBackground(Color.WHITE);
@@ -155,7 +157,7 @@ public class VentanaPrincipal extends JFrame {
 
         // boton cargar.
         botonCargar = new JButton("Cargar");
-        botonCargar.setBounds(400, 400, 170, 35);
+        botonCargar.setBounds(400, 400, 120, 35);
         botonCargar.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
         botonCargar.setForeground(Color.BLACK);
         botonCargar.setBackground(Color.WHITE);
@@ -164,8 +166,8 @@ public class VentanaPrincipal extends JFrame {
 
         // Icono de la aplicacion en la ventana principal
         Image image = new ImageIcon("Imagenes/contacto.png").getImage();
-        JLabel logo = new JLabel(new ImageIcon(image.getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
-        logo.setBounds(440, 25, 80, 80);
+        logo = new JLabel(new ImageIcon(image.getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
+        logo.setBounds(415, 25, 80, 80);
         add(logo);
 
         // Damos el color desde la clase Color a la ventana
@@ -189,7 +191,7 @@ public class VentanaPrincipal extends JFrame {
 
         botonGuardar.addActionListener(controlador);
 
-        botonCargar.addActionListener(controlador);
+        botonCargar.addActionListener(controlador);      
     }
 
     // Funcion add contacto, necesita el nombre y el telefono del contacto para
