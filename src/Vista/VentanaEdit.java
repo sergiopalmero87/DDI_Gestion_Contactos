@@ -126,7 +126,7 @@ public class VentanaEdit extends JDialog {
         botonCancel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCancel);
 
-        getContentPane().setBackground(new Color(50, 95, 121));
+        getContentPane().setBackground(new Color(63, 108, 125));
     }
 
     public void cancelEdit(){
