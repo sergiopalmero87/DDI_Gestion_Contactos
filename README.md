@@ -1,56 +1,65 @@
-# DDI_Gestion_Contactos
-Gestion de contactos con el uso de Java Swing. 2º DAM
+# Proyecto de gestión de contactos utilizando Java Swing para 2ºDAM.
+
+## Descripción
+
+Esta es una aplicación básica de gestión de contactos que tiene la opción de añadir, editar y eliminar contactos con su nombre y número de teléfono.
 
 
-# Requerimiento 1
+## Características Principales
 
-1.  Crear una ventana principal que muestre una lista de contactos en una tabla
-    de dos columnas y con tres botones para la lógica. La tabla debe disponer
+- **Agregar Contactos:** Añade a la lista un nuevo contacto con su nombre y número de teléfono.
+
+- **Editar Contactos:** Actualiza en la lista la información del contacto seleccionado.
+
+- **Eliminar Contactos:** Elimina de la lista el contacto seleccionado.
+
+
+## Capturas de pantalla de las ventanas.
+
+1.  Ventana principal donde se muestra una lista de contactos en una tabla
+    de dos columnas y con tres botones para la lógica. La tabla dispone
     de una barra de desplazamiento por si hay desbordamientos de filas.
 
-    ![Ventana principal](/Imagenes/REQ1.png)
+    ![Ventana principal](/Imagenes/Req_1.png)
 
-2.  Agregar un botón "Añadir contacto" en la ventana principal. Al hacer clic en
-    el botón "Añadir contacto", se abrirá una nueva ventana emergente que
-    permitirá al usuario ingresar los detalles del contacto: nombre y número
-    de teléfono. Después de ingresar los detalles del contacto y hacer clic en
-    "OK", el contacto se agregará a la lista en la ventana principal.
+2.  Botón **AÑADIR**. 
+    Al hacer clic en este botón, se abrirá una nueva ventana que permitirá al usuario ingresar los datos del contacto: 
+    nombre y número de teléfono. 
+    Después de ingresar los detalles del contacto y hacer clic en "OK", el contacto se agregará a la lista en la ventana principal.
 
-    ![Añadir contacto](/Imagenes/REQ2.png)
+    ![Añadir contacto](/Imagenes/Req_2.png)
+    ![Añadir contacto](/Imagenes/Req_2.2.png)
+    ![Añadir contacto](/Imagenes/Req_2.3.png)
 
-3.  Agregar un botón "Editar". Al hacer clic en este botón, se abrirá otra ventana
-    emergente que permitirá al usuario editar los detalles del contacto
+3.  Botón **EDITAR**.
+    Al hacer clic en este botón, se abrirá otra ventana que permitirá al usuario editar los detalles del contacto
     seleccionado previamente para modificarlos. Al hacer clic en “OK” la tabla
     de la ventana principal se actualizará automáticamente con los datos
     modificados. 
 
-    ![Editar contacto](/Imagenes/REQ3.png)
+    ![Editar contacto](/Imagenes/Req_3.png)
+    ![Editar contacto](/Imagenes/Req_3.2.png)
+    ![Editar contacto](/Imagenes/Req_3.3.png)
 
-    ![Contacto editado](/Imagenes/REQ3_2.png)
+4.  Botón **ELIMINAR**.
+    Al hacer clic en este botón, se eliminará el contacto de la lista que se haya seleccionado.
 
-4.  Agregar un botón "Eliminar". Al hacer clic en este botón, se eliminará el
-    contacto de la lista que se haya seleccionado.
+    ![Contacto eliminado](/Imagenes/Req_4.png)
 
-    ![Contacto eliminado](/Imagenes/REQ4.png)
+## Capturas de pantalla de validación de datos. 
 
-5.  (Sugerencia opcional) Agregar la opción de guardar la lista de tareas en un
-    archivo y cargarla nuevamente en la aplicación.
+1. Controlamos que el usuario ingrese bien los datos antes de permitir que se añada nada a la lista.
 
-    ![Guardar contactos](/Imagenes/Guardar.png)
+    ![Validar añadir](/Imagenes/Val_1.png)
+    ![Validar añadir](/Imagenes/Val_2.png)
 
-    ![Cargar contactos](/Imagenes/Cargar.png)
+2. Primero controlamos que el usuario seleccione un contacto de la lista y después los datos antes de permitir editar el contacto.
 
-# Requerimiento 2
+    ![Validar editar](/Imagenes/Val_3.png)
+    ![Validar editar](/Imagenes/Val_4.png)
+    ![Validar editar](/Imagenes/Val_5.png)
 
-En esta parte vamos a mejorar la interfaz gráfica de nuestra aplicación.
+3. Controlamos también que el usuario seleccione un contacto antes de eliminarlo de la lista.
 
-1. Color/imagen de fondo. 
-
-2. Cambiar el aspecto de los botones. 
-
-3. Cambiar la tipografía que viene por defecto.
-
-4. Cambiar el icono de la aplicación y del ejecutable.
-
-5. Elementos de diseño extras (sonidos, animaciones, menús, etc).
+    ![Validar eliminar](/Imagenes/Val_6.png)
 
