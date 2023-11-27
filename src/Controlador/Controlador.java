@@ -154,18 +154,6 @@ public class Controlador implements ActionListener {
             }
         }
 
-        //Si el boton ha sido guardar:
-        if(e.getSource() == ventana.getBotonGuardar()){
-            JOptionPane.showMessageDialog(ventana, "¡Guardado!");
-
-        }
-
-        //Si el boton ha sido cargar:
-        if (e.getSource() == ventana.getBotonCargar()){
-            JOptionPane.showMessageDialog(ventana, "Cargando...");
-            
-        }
-
     }
 
 }

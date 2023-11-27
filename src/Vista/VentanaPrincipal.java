@@ -97,7 +97,7 @@ public class VentanaPrincipal extends JFrame {
         tableModel = new DefaultTableModel(nombreColumnas, 0);
         table = new JTable(tableModel);
         scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(50, 100, 300, 420);
+        scrollPane.setBounds(125, 130, 300, 420);
         table.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 14));
         add(scrollPane);
 
@@ -106,8 +106,8 @@ public class VentanaPrincipal extends JFrame {
             Font font = Font.createFont(Font.TRUETYPE_FONT, getClass().getResourceAsStream("JetBrainsMono-Regular.ttf"));
             nombreApp = new JLabel("CONTACTIFY");
             nombreApp.setHorizontalAlignment(SwingConstants.CENTER);
-            nombreApp.setFont(font.deriveFont(Font.BOLD, 40f));
-            nombreApp.setBounds(0, 20, 400, 70);
+            nombreApp.setFont(font.deriveFont(Font.BOLD, 50f));
+            nombreApp.setBounds(40, 30, 400, 70);
             nombreApp.setForeground(Color.WHITE);
             add(nombreApp);
 
@@ -121,7 +121,7 @@ public class VentanaPrincipal extends JFrame {
 
         // botonAdd
         botonAdd = new JButton("Añadir");
-        botonAdd.setBounds(120, 550, 150, 35);
+        botonAdd.setBounds(110, 580, 150, 35);
         botonAdd.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 18));
         botonAdd.setForeground(Color.BLACK);
         botonAdd.setBackground(Color.WHITE);
@@ -130,8 +130,8 @@ public class VentanaPrincipal extends JFrame {
 
         // botonEdit
         botonEdit = new JButton("Editar");
-        botonEdit.setBounds(400, 200, 120, 35);
-        botonEdit.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
+        botonEdit.setBounds(285, 580, 80, 35);
+        botonEdit.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 15));
         botonEdit.setForeground(Color.BLACK);
         botonEdit.setBackground(Color.WHITE);
         botonEdit.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -139,14 +139,15 @@ public class VentanaPrincipal extends JFrame {
 
         // botonRemove
         botonRemove = new JButton("Eliminar");
-        botonRemove.setBounds(400, 250, 120, 35);
-        botonRemove.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
+        botonRemove.setBounds(370, 580, 80, 35);
+        botonRemove.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 15));
         botonRemove.setForeground(Color.BLACK);
         botonRemove.setBackground(Color.WHITE);
         botonRemove.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonRemove);
 
         // boton guardar.
+        /* 
         botonGuardar = new JButton("Guardar");
         botonGuardar.setBounds(400, 350, 120, 35);
         botonGuardar.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
@@ -154,8 +155,11 @@ public class VentanaPrincipal extends JFrame {
         botonGuardar.setBackground(Color.WHITE);
         botonGuardar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonGuardar);
+        */
+
 
         // boton cargar.
+        /* 
         botonCargar = new JButton("Cargar");
         botonCargar.setBounds(400, 400, 120, 35);
         botonCargar.setFont(new Font("JetBrainsMono.ttc", Font.PLAIN, 16));
@@ -163,6 +167,7 @@ public class VentanaPrincipal extends JFrame {
         botonCargar.setBackground(Color.WHITE);
         botonCargar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(botonCargar);
+        */
 
         // Icono de la aplicacion en la ventana principal
         Image image = new ImageIcon("Imagenes/contacto.png").getImage();
@@ -187,11 +192,7 @@ public class VentanaPrincipal extends JFrame {
 
         botonEdit.addActionListener(controlador);
 
-        botonRemove.addActionListener(controlador);
-
-        botonGuardar.addActionListener(controlador);
-
-        botonCargar.addActionListener(controlador);      
+        botonRemove.addActionListener(controlador);   
     }
 
     // Funcion add contacto, necesita el nombre y el telefono del contacto para
