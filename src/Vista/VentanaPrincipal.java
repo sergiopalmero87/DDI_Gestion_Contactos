@@ -5,6 +5,8 @@ import Controlador.Controlador;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.IOException;
 
 public class VentanaPrincipal extends JFrame {
@@ -193,6 +195,41 @@ public class VentanaPrincipal extends JFrame {
         botonEdit.addActionListener(controlador);
 
         botonRemove.addActionListener(controlador);   
+
+        logo.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Si dejamos en null el primer parametro, 
+                // el mensaje se muestra por defecto donde que esta implementado. 
+                // ya que no esta asociado a ningun frame.
+                JOptionPane.showMessageDialog(null,
+                    "INSTRUCCIONES:\n\n" +
+                    "Pulsa el botón 'AÑADIR' para agregar un contacto nuevo a la lista.\n" +
+                    "Pulsa el botón 'EDITAR' para cambiar la información del contacto deseado.\n" +
+                    "Pulsa el botón 'ELIMINAR' para borrar de la lista un contacto.");
+                
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+               
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+               
+            }
+        });
     }
 
     // Funcion add contacto, necesita el nombre y el telefono del contacto para

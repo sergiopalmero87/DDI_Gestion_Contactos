@@ -13,6 +13,8 @@ Esta es una aplicación básica de gestión de contactos que tiene la opción de
 
 - **Eliminar Contactos:** Elimina de la lista el contacto seleccionado.
 
+- **Instrucciones:** Al pulsar sobre el logo en la ventana principal se mostrarán las instrucciones de la app.
+
 
 ## Capturas de pantalla de las ventanas.
 
@@ -45,6 +47,11 @@ Esta es una aplicación básica de gestión de contactos que tiene la opción de
     Al hacer clic en este botón, se eliminará el contacto de la lista que se haya seleccionado.
 
     ![Contacto eliminado](/Imagenes/Req_4.png)
+
+5. **INSTRUCCIONES**.
+    Al hacer click en el logo de la ventana principal se muestran las instrucciones báscias, o la forma de utilizar la app.
+
+    ![Instrucciones](/Imagenes/Instrucciones.png)
 
 ## Capturas de pantalla de validación de datos. 
 
