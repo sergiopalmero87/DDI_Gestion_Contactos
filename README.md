@@ -69,3 +69,6 @@ Esta es una aplicación básica de gestión de contactos que tiene la opción de
 
     ![Validar eliminar](/Imagenes/Val_6.png)
 
+## Captura de pantalla de Archivos.
+
+![Archivos](/Imagenes/Archivos.png)
